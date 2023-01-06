@@ -1,4 +1,4 @@
-# InstantMeshUpdate
+# InstantMeshUpdate (Godot 3.x)
  Instantly Update Meshes that you modified (in Blender)
 
 ![InstantMeshUpdateVideoInstructions.gif](InstantMeshUpdateVideoInstructions.gif)
