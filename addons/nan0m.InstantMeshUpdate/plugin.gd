@@ -1,7 +1,7 @@
 tool
 extends EditorPlugin
 
-var accepted_file_types = ["glb", ".tscn"] #you can add other formats, I just didn't test them
+var accepted_file_types = ["glb"] #you can add other formats, I just didn't test them
 
 
 var f = File.new()
@@ -20,8 +20,8 @@ func _process(delta: float) -> void:
 		
 	for n in r.get_tree().get_nodes_in_group("NodeUpdate"):
 		var filename = n.get_filename()
-		if not filename.get_extension() in accepted_file_types:
-			return
+#		if not filename.get_extension() in accepted_file_types:
+#			return
 			
 		if not n in modif_dict:
 			var mod_time = f.get_modified_time(filename)
@@ -42,6 +42,7 @@ func _process(delta: float) -> void:
 				parent_node.add_child(new)
 				parent_node.move_child(new, pos_in_parent)
 				new.set_owner(edi.get_edited_scene_root())
+#				print('updated')
 			else:
 				continue
 			pass
